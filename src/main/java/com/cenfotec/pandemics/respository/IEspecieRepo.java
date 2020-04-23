@@ -1,0 +1,15 @@
+package com.cenfotec.pandemics.respository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.cenfotec.pandemics.model.Especie;
+
+@Repository
+public interface IEspecieRepo extends JpaRepository<Especie,Integer> {
+	
+	public List<Especie> findByGuid(int guid);
+}
+
