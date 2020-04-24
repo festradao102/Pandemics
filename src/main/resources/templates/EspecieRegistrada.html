@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<title>Pandemics - Especies</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Especie registrada!</title>
+
 <style>
 body {
   margin: 0;
@@ -40,27 +40,20 @@ body {
   color: white;
 }
 </style>
-
 </head>
+
 <body>
 <div class="topnav">
 	<a href="../home">Inicio</a>
-	<a href="especies">Index especies</a>
-	<a href="especies/registrar">Registrar especie</a>
-	<a href="especies/listarEspecies">Listar especies</a>
-	<a href="especies/listarEspeciePorGuid">Listar especie por ID</a>
+	<a href="registrar">Registrar especie</a>
+	<a href="listarEspecies">Listar especies</a>
+	<a href="listarEspeciePorGuid">Listar especie por ID</a>
 </div>
 
-<h1>Pandemics Spices</h1>
-
-<div>
-	<ul>
-		<li><a href="especies/registrar">Registrar especie</a></li>
-		<li><a href="especies/listarEspecies">Listar especies</a></li>
-		<li><a href="especies/listarEspeciePorGuid">Listar especie por ID</a></li>
-
-	</ul>
-</div>
-
+  <div class="alert alert-success">
+    <strong>Éxito</strong> Especie registrada!.
+  </div>
+  
 </body>
 </html>
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<title>Actualizar especie</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #0555c8;
+  color: white;
+}
+.cntFrmAct {
+  width: 250px;
+  clear: both;
+}
+
+.cntFrmAct input {
+  width: 100%;
+  clear: both;
+}
+
+#btncancel{
+	display:inline-block;
+}
+</style>
+
+</head>
+<body>
+<div class="topnav">
+	<a href="../../home">Inicio</a>
+	<a href="../../especies">Index especies</a>
+	<a href="../registrar">Registrar especie</a>
+	<a href="../listarEspecies">Listar especies</a>
+	<a href="../listarEspeciePorGuid">Listar especie por ID</a>
+</div>
+  
+	<div>	    
+	    <form name="formularioActualizar" action="#" th:action="@{/especies/especieActualizada}" th:object="${especie}" method="POST" 
+	    	  class="cntFrmAct">	
+	    	  
+	    <tr>
+	    GUID: <input type="text" name="guid" th:field="*{guid}" readonly>		
+		</tr>
+		</br>
+			    	  		      
+	    <tr>
+	    Nombre: <input type="text" name="nombre" th:field="*{nombre}" required>		
+		</tr>
+		</br>
+		
+		<tr>
+	    Descubierto:  <input type="text" name="descubierto" th:field="*{descubierto}" required>	   
+	    </tr>
+	    </br> 
+	      	    
+	    <label for="tipo">Tipo:</label>	    
+	     <select id="tipo" name="tipo" required>
+	     	<option th:text="*{tipo}" th:value="*{tipo}" th:field="*{tipo}"></option>
+		    <option value="Virus">Virus</option>
+		    <option value="Hongo">Hongo</option>
+		    <option value="Bacteria">Bacteria</option>
+	  	</select>
+	    </br>
+	    	    
+        <button name="submit" type="submit" value=0>Guardar</button>         
+	    </form>	     
+	    </br><input type="button" value="Cancelar" id="btncancel" onclick="cancelForm()">
+	    <a th:href="@{'../eliminar/' + ${especie.guid}}">
+	    	<input type="button" value="Eliminar" id="btndelete">
+	    </a>
+    </div> 
+    
+    <script>    
+    function cancelForm() {
+ 	   var frm = document.getElementsByName('formularioActualizar')[0]; //correct index en caso de repetidos
+ 	   frm.reset();  // reset data
+ 	   return true; // page refresh
+ 	}    
+    
+    function deleteObj(){
+    	var frm = document.getElementsByName('formularioActualizar')[0];
+    	
+    }
+    </script>
+
+</body>
+</html>

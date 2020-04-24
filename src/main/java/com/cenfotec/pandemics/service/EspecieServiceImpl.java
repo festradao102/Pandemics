@@ -13,6 +13,7 @@ public class EspecieServiceImpl implements EspecieService{
 
 	@Autowired
 	private IEspecieRepo repoEspecie;
+	
 		
 	@Override
 	public void guardarEspecie(Especie Especie) {
@@ -26,8 +27,19 @@ public class EspecieServiceImpl implements EspecieService{
 	}
 	
 	@Override
-	public List<Especie> findById(int guid) {
-		return null;
+	public void actualizarEspecie(Especie Especie) {
+		Especie.setFecha(java.time.LocalDateTime.now());
+		repoEspecie.save(Especie);
+	}
+
+	@Override
+	public Especie listarEspecieByGuid(int guid) {
+		return repoEspecie.getOne(guid);
+	}
+
+	@Override
+	public void EliminarEspecie(Especie especie) {
+		repoEspecie.delete(especie);		
 	}	
-	
+		
 }

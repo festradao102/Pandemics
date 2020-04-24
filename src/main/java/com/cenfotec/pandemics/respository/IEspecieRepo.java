@@ -9,7 +9,6 @@ import com.cenfotec.pandemics.model.Especie;
 
 @Repository
 public interface IEspecieRepo extends JpaRepository<Especie,Integer> {
-	
-	public List<Especie> findByGuid(int guid);
+
 }
 
