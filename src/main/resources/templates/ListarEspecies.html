@@ -73,6 +73,8 @@ tr:nth-child(even) {
     	    
     <table>    
     <tr>
+		<th>GUID</th>
+		<th>UUID</th>    
 		<th>Nombre</th>
 		<th>Descubierto</th>
 		<th>Tipo</th>		
@@ -81,11 +83,11 @@ tr:nth-child(even) {
     <th:block  th:each="especie : ${especies}">		    
 	<tr> 
 		<td th:text="${especie.guid}">GUID</td>
-		<td th:text="${especie.uu_id}">UUID</td>
+		<td th:text="${especie.uu_id}">UUID</td> 
 		<td th:text="${especie.nombre}">Nombre</td>
 		<td th:text="${especie.descubierto}">Descubierto</td>
-		<td th:text="${especie.tipo}">Tipo</td>
-		<td th:text="${especie.fecha}">Fecha registro</td>              
+		<td th:text="${especie.tipo}">Tipo</td>   
+		<td th:text="${especie.fecha}">Fecha registro</td>          
 	</tr>
 	</th:block>
     </table> 
