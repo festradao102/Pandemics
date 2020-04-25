@@ -7,15 +7,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 //import javax.validation.constraints.NotNull;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
-
+@Getter	
+@Setter
 @Entity
 public class Especie {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)  //sin esto llega a postgre siempre un 0 como id
     private int guid;
+	
+	@Column (name = "uuid")
+	private String uu_id;
     
     @Column (name = "nombre")
     private String nombre;
@@ -28,7 +35,17 @@ public class Especie {
     
     @Column (name = "tipo")
     private String tipo;
+    
+	public String getUUID() {
+		return uu_id;
+	}
 
+	public void setUUID(String puuid) {
+		this.uu_id = puuid;
+	}
+
+    /*
+     
 	public LocalDateTime getFecha() {
 		return fecha;
 	}
@@ -45,13 +62,7 @@ public class Especie {
 		this.guid = guid;
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	
 
 	public String getDescubierto() {
 		return descubierto;
@@ -69,5 +80,14 @@ public class Especie {
 		this.tipo = tipo;
 	}
 
+	public String getUUID() {
+		return uuid;
+	}
+
+	public void setUUID(String puuid) {
+		this.uuid = puuid;
+	}
+	
+	*/
    
 }

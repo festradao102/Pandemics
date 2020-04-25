@@ -78,6 +78,8 @@ tr:nth-child(even) {
 	</tr>    
     <th:block th:object="${especie}">		    
 	<tr> 
+		<td th:text="${especie.guid}">GUID</td>
+		<td th:text="${especie.uu_id}">UUID</td>
 		<td th:text="${especie.nombre}">Nombre</td>
 		<td th:text="${especie.descubierto}">Descubierto</td>
 		<td th:text="${especie.tipo}">Tipo</td>

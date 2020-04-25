@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html>
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -8,8 +7,9 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<title>Especies registradas</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Pagina de Error</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <style>
 body {
   margin: 0;
@@ -42,53 +42,18 @@ body {
 </style>
 </head>
 
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-
 <body>
 <div class="topnav">
 	<a href="../home">Inicio</a>
-	<a href="../especies">Index especies</a>
 	<a href="registrar">Registrar especie</a>
 	<a href="listarEspecies">Listar especies</a>
 	<a href="listarEspeciePorGuid">Listar especie por ID</a>
 </div>
 
-<body>  
-    	    
-    <table>    
-    <tr>
-		<th>Nombre</th>
-		<th>Descubierto</th>
-		<th>Tipo</th>		
-		<th>Fecha registro</th>
-	</tr>    
-    <th:block  th:each="especie : ${especies}">		    
-	<tr> 
-		<td th:text="${especie.guid}">GUID</td>
-		<td th:text="${especie.uu_id}">UUID</td>
-		<td th:text="${especie.nombre}">Nombre</td>
-		<td th:text="${especie.descubierto}">Descubierto</td>
-		<td th:text="${especie.tipo}">Tipo</td>
-		<td th:text="${especie.fecha}">Fecha registro</td>              
-	</tr>
-	</th:block>
-    </table> 
-    
+  <div class="alert alert-warning">
+    <strong>ERROR</strong> Hay ocurrido un problema, por favor revise la solicitud e intente de nuevo
+  </div>
+  
 </body>
 </html>
+

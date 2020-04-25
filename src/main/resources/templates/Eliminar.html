@@ -50,6 +50,7 @@ body {
   clear: both;
 }
 
+
 </style>
 
 </head>
@@ -61,7 +62,11 @@ body {
 	<a href="../listarEspecies">Listar especies</a>
 	<a href="../listarEspeciePorGuid">Listar especie por ID</a>
 </div>
-  
+
+  <div class="alert alert-danger">
+    <strong>ELIMINAR</strong> ¿Esta seguro que desea eliminar este registro del sistema?
+  </div>
+
 	<div>	    
 	    <form name="formularioEliminar" action="#" th:action="@{/especies/especieEliminada}" th:object="${especie}" method="POST" 
 	    	  class="cntFrmElm">	
