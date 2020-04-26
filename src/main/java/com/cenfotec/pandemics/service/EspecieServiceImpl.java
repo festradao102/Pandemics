@@ -2,6 +2,7 @@ package com.cenfotec.pandemics.service;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,11 @@ public class EspecieServiceImpl implements EspecieService{
 	@Override
 	public Especie listarEspecieByGuid(int guid) {
 		return repoEspecie.getOne(guid);
+	}
+	
+	@Override
+	public Optional<Especie> findEspecieByGuid(int guid) {
+		return repoEspecie.findById(guid);
 	}
 
 	@Override
